@@ -1,0 +1,15 @@
+{
+    "incorrectCredentials": {
+        "user": "standard_user",
+        "password": "test123"
+    },
+    "correctCredentials": {
+        "user": "standard_user",
+        "password": "secret_sauce"
+    },
+    "checkoutInfo": {
+        "firstName": "test",
+        "lastName": "new-test",
+        "zipCode": 400001
+    }
+}
