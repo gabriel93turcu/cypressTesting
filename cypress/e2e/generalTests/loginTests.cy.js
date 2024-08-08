@@ -5,7 +5,7 @@ describe('Login Tests', () => {
     beforeEach('Access site', () => {
         cy.visit("/");
     })
-
+ 
     it("Try login with incorrect credentials", () => {
         cy.get('[data-test="username"]').type(info.incorrectCredentials.user); // type username
         cy.get('[data-test="password"]').type(info.incorrectCredentials.password, {log: false});  //type password
