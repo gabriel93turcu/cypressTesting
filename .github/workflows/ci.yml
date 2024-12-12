@@ -3,10 +3,10 @@ name: Run Cypress Tests
 on:
   push:
     branches:
-      - master # Adjust based on your main branch
+      - main # Adjust based on your main branch
   pull_request:
     branches:
-      - master # Trigger on PR to master branch
+      - main # Trigger on PR to master branch
 
 jobs:
   cypress-run:
@@ -23,10 +23,8 @@ jobs:
 
       - name: Install dependencies
         working-directory: ./couse/Software-testing/cypressTesting # Correct path to package.json
-        run: |
-          npm install
+        run: npm install
 
       - name: Run Cypress tests
         working-directory: ./couse/Software-testing/cypressTesting # Correct path to package.json
-        run: |
-          npx cypress run  # Or use `npx cypress open` for interactive mode
+        run: npx cypress run # Or use `npx cypress open` for interactive mode
