@@ -1,34 +1,32 @@
-name: CI Pipeline
+name: Run Cypress Tests
 
-# Trigger the workflow on push or pull request events on the main branch
 on:
   push:
     branches:
-      - main
+      - master # Adjust based on your main branch
   pull_request:
     branches:
-      - main
+      - master # Trigger on PR to master branch
 
 jobs:
-  test:
-    name: Run Cypress Tests
-    runs-on: ubuntu-latest
+  cypress-run:
+    runs-on: ubuntu-latest # You can use macOS or Windows, depending on your environment
 
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      # Step 2: Set up Node.js environment
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: "16" # Use the appropriate Node.js version for your project
 
-      # Step 3: Install project dependencies
       - name: Install dependencies
-        run: npm install
+        working-directory: ./couse/Software-testing/cypressTesting # Adjust if the path is different
+        run: |
+          npm install
 
-      # Step 4: Run Cypress tests
       - name: Run Cypress tests
-        run: npx cypress run
+        working-directory: ./couse/Software-testing/cypressTesting # Adjust path if necessary
+        run: |
+          npx cypress run  # Or use `npx cypress open` for interactive mode
