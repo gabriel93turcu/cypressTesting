@@ -22,11 +22,11 @@ jobs:
           node-version: "16" # Use the appropriate Node.js version for your project
 
       - name: Install dependencies
-        working-directory: ./couse/Software-testing/cypressTesting # Adjust if the path is different
+        working-directory: ./couse/Software-testing/cypressTesting # Correct path to package.json
         run: |
           npm install
 
       - name: Run Cypress tests
-        working-directory: ./couse/Software-testing/cypressTesting # Adjust path if necessary
+        working-directory: ./couse/Software-testing/cypressTesting # Correct path to package.json
         run: |
           npx cypress run  # Or use `npx cypress open` for interactive mode
