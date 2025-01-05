@@ -10,7 +10,7 @@ on:
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest # You can use macOS or Windows, depending on your environment
+    runs-on: ubuntu-latest
 
     steps:
       - name: cypressTesting repository
